@@ -11,6 +11,10 @@ import Store from './components/Store'
 
 export default {
   name: 'app',
+  data () {
+    return {
+    }
+  },
   components: {
     Header,
     Store
