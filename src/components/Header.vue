@@ -21,14 +21,6 @@ export default {
 </script>
 
 <style lang="scss">
-  @import url('https://fonts.googleapis.com/css?family=Philosopher');
-  
-  html, body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Philosopher', sans-serif;
-  }
-
   .enter-word {
     width: 100%;
     height: 200px;
@@ -65,63 +57,6 @@ export default {
         box-shadow: none;
       }
     }
-  }
-
-  .all-words {
-    padding: 50px;
-    background: #FBEFFB;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    min-height: 100vh;
-  }
-
-  .item {
-    border: 1px solid #dedede;
-    border-radius: 5px;
-    margin: 10px 15px;
-    background: #fff;
-    box-shadow: 2px 2px 4px #dedede;
-    transition: all .3s ease;
-    min-width: 200px;
-    min-height: 100px;
-    cursor: pointer;
-    position: relative;
-
-    &:hover {
-      box-shadow: 0px 0px 5px 3px #90c1f3;;
-    }
-
-    .word {
-      height: 33.3%;
-      display: flex;
-      align-items: center;
-      padding: 0 5px;
-
-      &.first-word {
-        background: #E6E6E6;
-      }
-
-      &.second-word {
-        background: #F2F2F2;
-      }
-
-      &.description {
-        background: white;
-        font-size: 12px;
-      }
-    }
-  }
-
-  .close {
-    width: 10px;
-    height: 10px;
-    display: inline-block;
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    /*background: url('../img/close.svg') no-repeat center center;*/
-    padding: 3px;
   }
 </style>
 
