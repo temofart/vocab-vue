@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import Header from './components/Header'
 import Store from './components/Store'
+import Header from './components/Header'
 
 export default {
   name: 'app',

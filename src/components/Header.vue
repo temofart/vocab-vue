@@ -1,23 +1,41 @@
 <template>
   <div>
     <div class="enter-word">
-      <input id="word" type="text" placeholder="English word">
-      <input id="translate" value="" type="text" placeholder="Russian word">
-      <input id="description" value="" type="text" placeholder="Описание">
-      <button id="addWord">Добавить слово</button>
+      <input
+        v-model="first"
+        type="text"
+        placeholder="English word">
+      <input
+        v-model="second"
+        type="text"
+        placeholder="Russian word">
+      <input
+        v-model="description"
+        type="text"
+        placeholder="Описание">
+      <button @click="addWord(first, second, description)">Добавить слово</button>
     </div>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'Header',
-  data () {
-    return {
+  import { db } from '../main.js'
 
+  export default {
+    name: 'Header',
+    data () {
+      return {
+        first: '',
+        second: '',
+        description: ''
+      }
+    },
+    methods: {
+      addWord(first, second, description) {
+        db.collection('words').add({first, second, description})
+      }
     }
   }
-}
 </script>
 
 <style lang="scss">

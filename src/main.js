@@ -10,6 +10,9 @@ firebase.initializeApp({
  projectId: 'vocabulary-85ea8', 
  databaseURL: 'https://vocabulary-85ea8.firebaseio.com'
 })
+const firestore = firebase.firestore();
+const settings = {timestampsInSnapshots: true};
+  firestore.settings(settings);
 export const db = firebase.firestore()
 
 Vue.config.productionTip = false

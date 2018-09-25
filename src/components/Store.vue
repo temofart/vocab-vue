@@ -1,22 +1,26 @@
 <template>
   <div class="all-words">
-    <div v-for="(word, idx) in words" :key="idx" class="item">
-      <div class="word first-word">{{ word.word_first }}</div>
-      <div class="word second-word">{{ word.word_second }}</div>
-      <div class="word description">{{ word.word_descr }}</div>
+    <div 
+      v-for="(word, idx) in words"
+      v-if="notEmpty"
+      :key="idx"
+      class="item">
+      <div class="word first-word">{{ word.first }}</div>
+      <div class="word second-word">{{ word.second }}</div>
+      <div class="word description">{{ word.description }}</div>
     </div>
   </div>
 </template>
 
 <script>
-  import Header from './Header'
   import { db } from '../main.js'
 
   export default {
     name: 'Store',
     data () {
       return {
-        words: []
+        words: [],
+        notEmpty: true
       }
     },
     firestore () {
@@ -34,7 +38,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-    min-height: 100vh;
+    min-height: 300px;
   }
 
   .item {
@@ -45,7 +49,7 @@
     box-shadow: 2px 2px 4px #dedede;
     transition: all .3s ease;
     min-width: 200px;
-    min-height: 100px;
+    max-height: 100px;
     cursor: pointer;
     position: relative;
 
