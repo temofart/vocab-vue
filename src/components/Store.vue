@@ -8,6 +8,7 @@
       <div class="word first-word">{{ word.first }}</div>
       <div class="word second-word">{{ word.second }}</div>
       <div class="word description">{{ word.description }}</div>
+      <div @click="removeWord(word.id)" class="close"/>
     </div>
   </div>
 </template>
@@ -27,6 +28,11 @@
       return {
         words: db.collection('words')
       }
+    },
+    methods: {
+      removeWord(id) {
+        db.collection('words').doc(id).delete()
+      }
     }
   }
 </script>
@@ -39,6 +45,17 @@
     flex-wrap: wrap;
     justify-content: flex-start;
     min-height: 300px;
+  }
+
+  .close {
+    display: none;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: url('../assets/close.svg') no-repeat center center;
+    padding: 3px;
   }
 
   .item {
@@ -54,7 +71,11 @@
     position: relative;
 
     &:hover {
-      box-shadow: 0px 0px 5px 3px #90c1f3;;
+      box-shadow: 0px 0px 5px 3px #90c1f3;
+
+      .close {
+        display: inline-block;
+      }
     }
 
     .word {
@@ -76,17 +97,6 @@
         font-size: 12px;
       }
     }
-  }
-
-  .close {
-    width: 10px;
-    height: 10px;
-    display: inline-block;
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    /*background: url('../img/close.svg') no-repeat center center;*/
-    padding: 3px;
   }
 </style>
 
