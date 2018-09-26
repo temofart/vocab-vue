@@ -4,16 +4,17 @@
       <input
         v-model="first"
         type="text"
-        placeholder="English word">
+        required
+        placeholder="Word*">
       <input
         v-model="second"
         type="text"
-        placeholder="Russian word">
+        placeholder="Translate*">
       <input
         v-model="description"
         type="text"
-        placeholder="Описание">
-      <button @click="addWord(first, second, description)">Добавить слово</button>
+        placeholder="Description">
+      <button @click="addWord(first, second, description)">Add word</button>
     </div>
   </div>
 </template>
@@ -32,7 +33,15 @@
     },
     methods: {
       addWord(first, second, description) {
-        db.collection('words').add({first, second, description})
+        if ((first && second) !== '') {
+          db.collection('words').add({first, second, description})
+          this.first = ''
+          this.second = ''
+          this.description = ''
+        }
+        else {
+          alert('Заполните поля')
+        }
       }
     }
   }

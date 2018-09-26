@@ -2,7 +2,6 @@
   <div class="all-words">
     <div 
       v-for="(word, idx) in words"
-      v-if="notEmpty"
       :key="idx"
       class="item">
       <div class="word first-word">{{ word.first }}</div>
@@ -20,8 +19,7 @@
     name: 'Store',
     data () {
       return {
-        words: [],
-        notEmpty: true
+        words: []
       }
     },
     firestore () {
