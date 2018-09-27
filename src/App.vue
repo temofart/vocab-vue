@@ -29,5 +29,6 @@ export default {
     margin: 0;
     padding: 0;
     font-family: 'Philosopher', sans-serif;
+    background: rgb(243, 243, 243);
   }
 </style>

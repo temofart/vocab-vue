@@ -54,7 +54,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #90c1f3;
+    background: linear-gradient(287deg, #00bbfe, #005cff);
+    box-shadow: 0px 10px 35px -10px #898989;
 
     input {
       width: 200px;

@@ -38,7 +38,6 @@
 <style lang="scss" scoped>
   .all-words {
     padding: 50px;
-    background: #FBEFFB;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
